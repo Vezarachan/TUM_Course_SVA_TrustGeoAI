@@ -28,13 +28,32 @@ TUM_Course_SVA_TrustGeoAI/
 ├── notebooks/            # Weekly exercise notebooks
 │   ├── TrustworthyGeoAI_case_1.ipynb
 │   └── TrustworthyGeoAI_case_2.ipynb
-├── data/                 # Small example datasets (parquet, csv, geojson)
-│   └── eurosat_metadata.parquet
+├── data/                 # Example datasets (see "Datasets" below)
+│   ├── deu_buildup.tif
+│   ├── eurosat_metadata.parquet
+│   ├── city_boundaries.parquet
+│   ├── city_subdivisions.parquet
+│   ├── berlin_buildings.parquet
+│   ├── hamburg_buildings.parquet
+│   ├── muenchen_buildings.parquet
+│   ├── frankfurt_buildings.parquet
+│   ├── leipzig_buildings.parquet
+│   └── dresden_buildings.parquet
 ├── figures/              # Static figures referenced from notebooks
 └── LICENSE
 ```
 
 Larger datasets (e.g. the full EuroSAT image archive) are **not** stored in this repo. They are pulled from external hosts (Hugging Face / Zenodo) inside the notebooks.
+
+### Datasets
+
+| File | Source | What it is |
+|------|--------|------------|
+| `deu_buildup.tif` | Built-up area raster of Germany | Reference layer (proxy ground truth) for assessing the spatial completeness of OSM buildings. |
+| `eurosat_metadata.parquet` | [EuroSAT](https://github.com/phelber/EuroSAT) | Per-tile metadata (class label, path, geo-extent) for the EuroSAT land-cover dataset. |
+| `{city}_buildings.parquet` × 6 | OpenStreetMap (via OSMnx, snapshot 2026-04-29) | Building footprint polygons + key tags (`building`, `building:levels`, `height`) for **Berlin, Hamburg, München, Frankfurt, Leipzig, Dresden**. The 6 cities span N/S, urban/historic-East/West Germany — chosen so that OSM mapping completeness can be compared across regions. |
+| `city_boundaries.parquet` | OpenStreetMap | Outer city boundary polygon (one row per city, column `city`). |
+| `city_subdivisions.parquet` | OpenStreetMap | `admin_level=9` subdivisions: 12 Bezirke (Berlin) / 7 (Hamburg) / 25 (München) / 16 (Frankfurt) / 10 (Leipzig) / 19 (Dresden). Use these for intra-city completeness analysis. |
 
 ---
 
@@ -66,9 +85,39 @@ Python 3.10+ is recommended.
 
 Each notebook contains a setup cell that pulls the data it needs. The two patterns we use:
 
-**Small files** — direct download from the repo:
+**Single file** — direct download from the repo:
 ```python
-!wget -q https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/data/eurosat_metadata.parquet
+import pandas as pd
+df = pd.read_parquet(
+    "https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/data/eurosat_metadata.parquet"
+)
+```
+
+**GeoParquet (e.g. building footprints)** — same idea but read with GeoPandas:
+```python
+import geopandas as gpd
+gdf = gpd.read_parquet(
+    "https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/data/berlin_buildings.parquet"
+)
+```
+
+**Multiple files** — fetch only what the notebook needs (idempotent setup cell):
+```python
+import os, urllib.request
+REPO   = "Vezarachan/TUM_Course_SVA_TrustGeoAI"
+BRANCH = "main"
+FILES  = [
+    "data/deu_buildup.tif",
+    "data/city_boundaries.parquet",
+    "data/city_subdivisions.parquet",
+    "data/berlin_buildings.parquet",
+]
+for path in FILES:
+    if not os.path.exists(path):
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        urllib.request.urlretrieve(
+            f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{path}", path
+        )
 ```
 
 **Larger image datasets** — Hugging Face:
