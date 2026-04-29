@@ -25,7 +25,7 @@ Additional topics (model calibration, fairness, explainability) will be added in
 
 ```
 TUM_Course_SVA_TrustGeoAI/
-├── Exercises/            # Weekly exercise notebooks
+├── notebooks/            # Weekly exercise notebooks
 │   ├── TrustworthyGeoAI_case_1.ipynb
 │   └── TrustworthyGeoAI_case_2.ipynb
 ├── data/                 # Small example datasets (parquet, csv, geojson)
@@ -46,7 +46,7 @@ Click the badge next to any notebook below and it will open directly in Colab. T
 
 | # | Notebook | Open |
 |---|----------|------|
-| 1 | Uncertainty in Spatial Data | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/Exercises/TrustworthyGeoAI_case_1.ipynb) |
+| 1 | Uncertainty in Spatial Data | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_1.ipynb) |
 | 2 | *(coming soon)* | — |
 
 ### Option 2 — Run locally
