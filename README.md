@@ -28,8 +28,7 @@ TUM_Course_SVA_TrustGeoAI/
 ├── Exercises/            # Weekly exercise notebooks
 │   ├── TrustworthyGeoAI_case_1.ipynb
 │   └── TrustworthyGeoAI_case_2.ipynb
-├── CaseStudy1/           # End-to-end case study (EuroSAT)
-├── datasets/             # Small example datasets (parquet, csv, geojson)
+├── data/                 # Small example datasets (parquet, csv, geojson)
 │   └── eurosat_metadata.parquet
 ├── figures/              # Static figures referenced from notebooks
 └── LICENSE
@@ -69,7 +68,7 @@ Each notebook contains a setup cell that pulls the data it needs. The two patter
 
 **Small files** — direct download from the repo:
 ```python
-!wget -q https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/datasets/eurosat_metadata.parquet
+!wget -q https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/data/eurosat_metadata.parquet
 ```
 
 **Larger image datasets** — Hugging Face:
