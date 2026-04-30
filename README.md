@@ -32,6 +32,7 @@ TUM_Course_SVA_TrustGeoAI/
 │   ├── deu_buildup.tif
 │   ├── eurosat_metadata.parquet
 │   ├── us_election.gpkg
+│   ├── king_county.gpkg
 │   ├── city_boundaries.parquet
 │   ├── city_subdivisions.parquet
 │   ├── berlin_buildings.parquet
@@ -53,6 +54,7 @@ Larger datasets (e.g. the full EuroSAT image archive) are **not** stored in this
 | `deu_buildup.tif` | Built-up area raster of Germany | Reference layer (proxy ground truth) for assessing the spatial completeness of OSM buildings. |
 | `eurosat_metadata.parquet` | [EuroSAT](https://github.com/phelber/EuroSAT) | Per-tile metadata (class label, path, geo-extent) for the EuroSAT land-cover dataset. |
 | `us_election.gpkg` | US Census + election results, 2012 & 2016 | 3 108 county polygons with demographics and Dem/GOP vote shares. Used to demonstrate the **Modifiable Areal Unit Problem (MAUP)**: aggregating the same election votes at county vs. state level produces visually opposite stories. Single layer `election`, EPSG:4326. |
+| `king_county.gpkg` | US Census TIGER 2023 | Multi-level admin boundaries for King County, WA — companion to `us_election.gpkg` for an *intra-county* MAUP exercise (scale effect + zoning effect at finer scales). Layers: `county` (1 outline), `places` (62 cities + Census Designated Places), `tracts` (495 Census tracts). |
 | `{city}_buildings.parquet` × 6 | OpenStreetMap (via OSMnx, snapshot 2026-04-29) | Building footprint polygons + key tags (`building`, `building:levels`, `height`) for **Berlin, Hamburg, München, Frankfurt, Leipzig, Dresden**. The 6 cities span N/S, urban/historic-East/West Germany — chosen so that OSM mapping completeness can be compared across regions. |
 | `city_boundaries.parquet` | OpenStreetMap | Outer city boundary polygon (one row per city, column `city`). |
 | `city_subdivisions.parquet` | OpenStreetMap | `admin_level=9` subdivisions: 12 Bezirke (Berlin) / 7 (Hamburg) / 25 (München) / 16 (Frankfurt) / 10 (Leipzig) / 19 (Dresden). Use these for intra-city completeness analysis. |
