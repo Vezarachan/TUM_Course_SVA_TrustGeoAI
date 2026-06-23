@@ -9,11 +9,10 @@ This repository hosts the exercise notebooks, case studies, and datasets used th
 
 ## 🚀 Quick start (students start here)
 
-**New to the course? Open the Introduction notebook first** — it installs everything and checks that your environment works in ~2 minutes. Then work through the case studies in order.
+Open a notebook in Colab and run it top to bottom. **Each notebook is self-contained**: its first cells install the packages it needs and download the data automatically (1–2 min on Colab the first time). Because Colab gives every notebook its own runtime, each one sets up its own environment — just open the one you want and run it.
 
 | # | Notebook | Topic | Open in Colab |
 |---|----------|-------|---------------|
-| 0 | **Introduction & Setup** | Install packages, download data, verify your environment | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_introduction.ipynb) |
 | 1 | **Case 1 — Uncertainty in Spatial Data** | Imbalanced sampling, incompleteness, and the MAUP | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_1.ipynb) |
 | 2 | **Case 2 — Uncertainty in Spatially Explicit Modeling** | Spatial inductive bias and spatial transferability | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_2.ipynb) |
 
@@ -45,7 +44,6 @@ Additional topics (calibration, fairness, explainability) will be added in futur
 ```
 TUM_Course_SVA_TrustGeoAI/
 ├── notebooks/                         # Exercise notebooks (open in Colab)
-│   ├── TrustworthyGeoAI_introduction.ipynb   # ← start here
 │   ├── TrustworthyGeoAI_case_1.ipynb
 │   └── TrustworthyGeoAI_case_2.ipynb
 ├── geocp/                             # GeoConformal Prediction package (used in Case 2)
@@ -91,7 +89,7 @@ Python 3.10+ is recommended. The `geocp` package is included in the repo, so no 
 
 ## For students
 
-- **Always start with the Introduction notebook** to set up your environment.
+- Each notebook installs what it needs on its first run — just open it in Colab and **Run all**.
 - Submissions: please follow the instructions on the course Moodle page.
 - Found a bug in a notebook? Open a GitHub issue with the notebook name and the cell number.
 
