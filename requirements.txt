@@ -1,0 +1,26 @@
+# Core scientific stack
+numpy
+pandas
+scipy
+matplotlib
+
+# Geospatial
+geopandas
+shapely
+pyogrio
+
+# Spatial statistics / modeling
+libpysal
+esda
+mgwr
+
+# Machine learning
+scikit-learn
+xgboost
+
+# Notebook environment
+jupyterlab
+ipykernel
+
+# Note: the GeoConformal Prediction package (geocp/) ships inside this repo,
+# so it does not need to be installed separately.

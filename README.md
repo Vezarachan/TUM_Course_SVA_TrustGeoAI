@@ -1,23 +1,42 @@
 # Spatial Visual Analytics for Trustworthy GeoAI
 
 Course materials for the TUM course **Spatial Visual Analytics (SVA) for Trustworthy Geospatial Artificial Intelligence**.
-This repository hosts the exercise notebooks, case studies, and example datasets that students use throughout the course. Notebooks are designed to run end-to-end in **Google Colab** with no local setup.
+This repository hosts the exercise notebooks, case studies, and datasets used throughout the course. Every notebook is designed to run end-to-end in **Google Colab** with **no local setup** — you only need a Google account.
 
 > Technical University of Munich · Summer Semester 2026
 
 ---
 
+## 🚀 Quick start (students start here)
+
+**New to the course? Open the Introduction notebook first** — it installs everything and checks that your environment works in ~2 minutes. Then work through the case studies in order.
+
+| # | Notebook | Topic | Open in Colab |
+|---|----------|-------|---------------|
+| 0 | **Introduction & Setup** | Install packages, download data, verify your environment | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_introduction.ipynb) |
+| 1 | **Case 1 — Uncertainty in Spatial Data** | Imbalanced sampling, incompleteness, and the MAUP | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_1.ipynb) |
+| 2 | **Case 2 — Uncertainty in Spatially Explicit Modeling** | Spatial inductive bias and spatial transferability | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_2.ipynb) |
+
+**How to run a notebook in Colab**
+
+1. Click an **Open in Colab** badge above.
+2. Run the cells top to bottom (`Shift`+`Enter`), or **Runtime → Run all**.
+3. The first setup cell installs a few geospatial packages (1–2 min the first time) and downloads the data automatically. No GPU needed.
+
+That's it — you never have to download anything by hand.
+
+---
+
 ## Course overview
 
-Modern GeoAI systems make consequential predictions about land cover, urbanization, and climate risk — often from data whose **uncertainty**, **bias**, and **spatial scale** are easy to overlook. This course teaches students to *see* those issues with the help of visual analytics, and to reason about when a model output can be trusted.
+Modern GeoAI systems make consequential predictions about land cover, urbanization, and climate risk — often from data and models whose **uncertainty**, **bias**, and **spatial scale** are easy to overlook. This course teaches students to *see* those issues with visual analytics, and to reason about when a model output can be trusted.
 
-The current materials focus on **uncertainty in spatial data**, examined from three angles:
+The current materials cover two themes:
 
-- **Imbalanced sampling** of spatial data across regions.
-- **Incompleteness** of spatial data across regions.
-- **Spatial scale** and the Modifiable Areal Unit Problem (MAUP).
+- **Case 1 — Uncertainty in spatial *data*:** imbalanced sampling across regions, incompleteness of coverage, and spatial scale / the Modifiable Areal Unit Problem (MAUP).
+- **Case 2 — Uncertainty in spatially explicit *modeling*:** **spatial inductive bias** (how a model uses geography — e.g. coordinates as features, or a spatial model like GWR — and how confident it is, via GeoConformal Prediction) and **spatial transferability** (how performance changes when a model is moved between regions, and how the choice of spatial split changes what you measure).
 
-Additional topics (model calibration, fairness, explainability) will be added in future sessions.
+Additional topics (calibration, fairness, explainability) will be added in future sessions.
 
 ---
 
@@ -25,54 +44,39 @@ Additional topics (model calibration, fairness, explainability) will be added in
 
 ```
 TUM_Course_SVA_TrustGeoAI/
-├── notebooks/            # Weekly exercise notebooks
+├── notebooks/                         # Exercise notebooks (open in Colab)
+│   ├── TrustworthyGeoAI_introduction.ipynb   # ← start here
 │   ├── TrustworthyGeoAI_case_1.ipynb
 │   └── TrustworthyGeoAI_case_2.ipynb
-├── data/                 # Example datasets (see "Datasets" below)
-│   ├── deu_buildup.tif
-│   ├── eurosat_metadata.parquet
-│   ├── us_election.gpkg
-│   ├── king_county.gpkg
-│   ├── city_boundaries.parquet
-│   ├── city_subdivisions.parquet
-│   ├── berlin_buildings.parquet
-│   ├── hamburg_buildings.parquet
-│   ├── muenchen_buildings.parquet
-│   ├── frankfurt_buildings.parquet
-│   ├── leipzig_buildings.parquet
-│   └── dresden_buildings.parquet
-├── figures/              # Static figures referenced from notebooks
+├── geocp/                             # GeoConformal Prediction package (used in Case 2)
+├── data/                              # Datasets (see "Datasets" below)
+├── figures/                           # Static figures referenced from notebooks
+├── requirements.txt                   # For local installs (Colab installs automatically)
 └── LICENSE
 ```
 
-Larger datasets (e.g. the full EuroSAT image archive) are **not** stored in this repo. They are pulled from external hosts (Hugging Face / Zenodo) inside the notebooks.
+Larger datasets (e.g. the full EuroSAT image archive) are **not** stored in this repo; they are pulled from external hosts inside the notebooks.
 
 ### Datasets
 
-| File | Source | What it is |
-|------|--------|------------|
-| `deu_buildup.tif` | Built-up area raster of Germany | Reference layer (proxy ground truth) for assessing the spatial completeness of OSM buildings. |
-| `eurosat_metadata.parquet` | [EuroSAT](https://github.com/phelber/EuroSAT) | Per-tile metadata (class label, path, geo-extent) for the EuroSAT land-cover dataset. |
-| `us_election.gpkg` | US Census + election results, 2012 & 2016 | 3 108 county polygons with demographics and Dem/GOP vote shares. Used to demonstrate the **Modifiable Areal Unit Problem (MAUP)**: aggregating the same election votes at county vs. state level produces visually opposite stories. Single layer `election`, EPSG:4326. |
-| `king_county.gpkg` | US Census TIGER 2023 | Multi-level admin boundaries for King County, WA — companion to `us_election.gpkg` for an *intra-county* MAUP exercise (scale effect + zoning effect at finer scales). Layers: `county` (1 outline), `places` (62 cities + Census Designated Places), `tracts` (495 Census tracts). |
-| `{city}_buildings.parquet` × 6 | OpenStreetMap (via OSMnx, snapshot 2026-04-29) | Building footprint polygons + key tags (`building`, `building:levels`, `height`) for **Berlin, Hamburg, München, Frankfurt, Leipzig, Dresden**. The 6 cities span N/S, urban/historic-East/West Germany — chosen so that OSM mapping completeness can be compared across regions. |
-| `city_boundaries.parquet` | OpenStreetMap | Outer city boundary polygon (one row per city, column `city`). |
-| `city_subdivisions.parquet` | OpenStreetMap | `admin_level=9` subdivisions: 12 Bezirke (Berlin) / 7 (Hamburg) / 25 (München) / 16 (Frankfurt) / 10 (Leipzig) / 19 (Dresden). Use these for intra-city completeness analysis. |
+| File | What it is | Used in |
+|------|------------|---------|
+| `eurosat_metadata.parquet` | Per-tile metadata for the [EuroSAT](https://github.com/phelber/EuroSAT) land-cover dataset. | Case 1 |
+| `deu_buildup.tif` | Built-up area raster of Germany — reference layer for OSM building completeness. | Case 1 |
+| `{city}_buildings.parquet` × 6 | OSM building footprints for Berlin, Hamburg, München, Frankfurt, Leipzig, Dresden. | Case 1 |
+| `city_boundaries.parquet`, `city_subdivisions.parquet` | City outlines and `admin_level=9` subdivisions for the 6 cities. | Case 1 |
+| `us_election.gpkg` | 3,108 US county polygons with demographics + 2012/2016 vote shares (MAUP demo). | Case 1 |
+| `king_county.gpkg` | Multi-level admin boundaries for King County, WA (county / places / tracts). | Case 1 & 2 |
+| `seattle_sample_3k.csv` | 3,000 Seattle home sales: log price, 8 features, UTM coordinates. | Case 2 |
+| `US_Climate_ERA5_CLIMATE.csv` | A continuous target + 9 predictors across the 9 NOAA US climate regions. | Case 2 |
+
+The `geocp/` folder is a small **GeoConformal Prediction** package (Lou et al., 2025) used in Case 2 to produce spatially-varying, calibrated prediction intervals. The notebooks download it automatically.
 
 ---
 
-## Getting started
+## Running locally (optional)
 
-### Option 1 — One-click in Google Colab (recommended)
-
-Click the badge next to any notebook below and it will open directly in Colab. The first cell of each notebook handles dataset download, so you only need a Google account.
-
-| # | Notebook | Open |
-|---|----------|------|
-| 1 | Uncertainty in Spatial Data | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_1.ipynb) |
-| 2 | *(coming soon)* | — |
-
-### Option 2 — Run locally
+Colab is recommended, but you can also run everything locally:
 
 ```bash
 git clone https://github.com/Vezarachan/TUM_Course_SVA_TrustGeoAI.git
@@ -81,72 +85,26 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-Python 3.10+ is recommended.
-
----
-
-## Loading datasets inside a notebook
-
-Each notebook contains a setup cell that pulls the data it needs. The two patterns we use:
-
-**Single file** — direct download from the repo:
-```python
-import pandas as pd
-df = pd.read_parquet(
-    "https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/data/eurosat_metadata.parquet"
-)
-```
-
-**GeoParquet (e.g. building footprints)** — same idea but read with GeoPandas:
-```python
-import geopandas as gpd
-gdf = gpd.read_parquet(
-    "https://raw.githubusercontent.com/Vezarachan/TUM_Course_SVA_TrustGeoAI/main/data/berlin_buildings.parquet"
-)
-```
-
-**Multiple files** — fetch only what the notebook needs (idempotent setup cell):
-```python
-import os, urllib.request
-REPO   = "Vezarachan/TUM_Course_SVA_TrustGeoAI"
-BRANCH = "main"
-FILES  = [
-    "data/deu_buildup.tif",
-    "data/city_boundaries.parquet",
-    "data/city_subdivisions.parquet",
-    "data/berlin_buildings.parquet",
-]
-for path in FILES:
-    if not os.path.exists(path):
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        urllib.request.urlretrieve(
-            f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{path}", path
-        )
-```
-
-**Larger image datasets** — Hugging Face:
-```python
-from datasets import load_dataset
-ds = load_dataset("blanchon/EuroSAT_RGB", split="train")
-```
+Python 3.10+ is recommended. The `geocp` package is included in the repo, so no extra install is needed for it.
 
 ---
 
 ## For students
 
+- **Always start with the Introduction notebook** to set up your environment.
 - Submissions: please follow the instructions on the course Moodle page.
-- Questions: open a GitHub issue, or post on the course forum.
-- Bugs in a notebook? Open an issue with the notebook name and the cell number.
+- Found a bug in a notebook? Open a GitHub issue with the notebook name and the cell number.
 
 ## For instructors / re-use
 
-You are welcome to fork this repository and adapt it for your own course under the terms of the [MIT License](LICENSE). If you do, a citation back to this repo and to the TUM SVA course is appreciated.
+You are welcome to fork this repository and adapt it for your own course under the [MIT License](LICENSE). A citation back to this repo and to the TUM SVA course is appreciated.
 
 ---
 
 ## Acknowledgements
 
 - The EuroSAT dataset is published by Helber et al. (2019), *EuroSAT: A Novel Dataset and Deep Learning Benchmark for Land Use and Land Cover Classification.*
+- GeoConformal Prediction: Lou, Luo & Meng (2025).
 - Course developed at the Technical University of Munich.
 
 ## Contact
