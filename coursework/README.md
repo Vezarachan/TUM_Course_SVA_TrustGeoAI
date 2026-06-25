@@ -22,11 +22,13 @@ and interpreting trust**, not writing code.
 Then:
 
 1. **Sign in** with your Google account.
-2. **Runtime ▸ Run all** (or run cells top to bottom with `Shift`+`Enter`).
+2. **⚠️ Make your own copy first: *File ▸ Save a copy in Drive*.** Opening from GitHub is read-only —
+   work in the copy in *your* Drive so your code, answers, and results are saved.
+3. In your copy, **Runtime ▸ Run all** (or run cells top to bottom with `Shift`+`Enter`).
    The first cell downloads the method and the data for you — **nothing to install**, Colab already
    has the rest. Only the dataset you actually pick is downloaded.
-3. **Explore** with the drop-down menus, and **fill in the 🟨 *YOUR TURN* cells**.
-4. **Save your work:** *File ▸ Save a copy in Drive*. To hand in, *File ▸ Download ▸ Download .ipynb*.
+4. **Explore** with the drop-down menus, and **fill in the 🟨 *YOUR TURN* cells**.
+5. Your work auto-saves to Drive. To hand in, also *File ▸ Download ▸ Download .ipynb* (and your `report.html`).
 
 That is the whole setup. The rest of this page explains how to use the notebook; a short
 [*Run locally*](#run-locally-optional) appendix is at the end if you prefer your own machine.
