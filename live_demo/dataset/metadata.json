@@ -1,0 +1,1148 @@
+{
+  "US_Forest_FIA": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name",
+      "Description"
+    ],
+    "rows": [
+      [
+        "region",
+        "STATE_ABBR",
+        "State Abbreviation",
+        "Two-letter state code (e.g., CA, WA, FL)."
+      ],
+      [
+        "fips",
+        "FIPS",
+        "County Code",
+        "FIPS county code"
+      ],
+      [
+        "lat",
+        "LAT",
+        "Latitude",
+        ""
+      ],
+      [
+        "lon",
+        "LON",
+        "Longitude",
+        ""
+      ],
+      [
+        "Y",
+        "TOTAL_BIOMASS_MG_HA",
+        "Total Biomass",
+        "Total above-ground and below-ground tree biomass per hectare. Sum of all living tree dry biomass including stems, branches, foliage, and roots."
+      ],
+      [
+        "X1",
+        "ELEV_CLASS",
+        "Elevation Class",
+        "Categorical elevation zones: 0-500m, 500-1000m, 1000-1500m, 1500-2000m, >2000m."
+      ],
+      [
+        "X2",
+        "SLOPE_CLASS",
+        "Slope Class",
+        "Categorical slope classes: Flat (<5°), Gentle (5-15°), Moderate (15-30°), Steep (>30°)."
+      ],
+      [
+        "X3",
+        "ASPECT",
+        "Aspect",
+        "Direction the slope faces, measured in degrees from north (0-360°)."
+      ],
+      [
+        "X4",
+        "HEAT_LOAD_INDEX",
+        "Heat Load Index",
+        "Topographic index combining latitude, slope, and aspect to estimate potential solar radiation (McCune & Keon 2002)."
+      ],
+      [
+        "X5",
+        "BA_M2_HA",
+        "Basal Area (Live Trees)",
+        "Total cross-sectional area of all living tree stems at breast height (1.37m) per acre."
+      ],
+      [
+        "X6",
+        "TREES_PER_HA",
+        "Tree Density",
+        "Number of trees per hectare, accounting for plot expansion factors."
+      ],
+      [
+        "X7",
+        "DIA",
+        "Mean Diameter at Breast Height",
+        "Average diameter of trees at breast height (1.37m) in the plot."
+      ],
+      [
+        "X8",
+        "HT",
+        "Mean Tree Height",
+        "Mean of HT for all live trees"
+      ],
+      [
+        "X9",
+        "FORTYPCD",
+        "Forest Type Code",
+        "Forest type classification based on dominant species groups (e.g., 221=Douglas-fir, 701=Oak-pine)."
+      ],
+      [
+        "X10",
+        "STDSZCD",
+        "Stand Size Class",
+        "Stand size class based on diameter of dominant trees: 1=large (>28\"), 2=medium (11-28\"), 3=small (5-11\"), 4=non-stocked, 5=seedlings."
+      ],
+      [
+        "X11",
+        "SITECLCD",
+        "Site Class",
+        "Site productivity class based on potential tree growth: 1=very high, 2=high, 3=moderately high, 4=moderate, 5=low, 6=very low, 7=non-productive."
+      ],
+      [
+        "X12",
+        "PHYSCLCD",
+        "Physiographic Class",
+        "Physiographic or soil drainage class affecting site moisture and productivity."
+      ],
+      [
+        "time",
+        "INVYR",
+        "Inventory Year",
+        "Year the plot was inventoried."
+      ]
+    ]
+  },
+  "US_Hydro_CAMELS": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "lat",
+        "gauge_lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "gauge_lon",
+        "Longitude"
+      ],
+      [
+        "region",
+        "region",
+        "region (2-digit USGS hydrologic unit code)"
+      ],
+      [
+        "Y",
+        "q_mean",
+        "mean daily discharge"
+      ],
+      [
+        "X1",
+        "p_mean",
+        "mean daily precipitation"
+      ],
+      [
+        "X2",
+        "pet_mean",
+        "mean daily PET [estimated by N15 using Priestley-Taylor formulation calibrated for each catchment]"
+      ],
+      [
+        "X3",
+        "aridity",
+        "aridity (PET/P, ratio of mean PET [estimated by N15 using Priestley-Taylor formulation calibrated for each catchment] to mean precipitation)"
+      ],
+      [
+        "X4",
+        "elev_mean",
+        "catchment mean elevation"
+      ],
+      [
+        "X5",
+        "slope_mean",
+        "catchment mean slope"
+      ],
+      [
+        "X6",
+        "frac_forest",
+        "forest fraction"
+      ],
+      [
+        "X7",
+        "lai_max",
+        "maximum monthly mean of the leaf area index (based on 12 monthly means)"
+      ],
+      [
+        "X8",
+        "soil_depth_statsgo",
+        "soil depth (maximum 1.5m, layers marked as water and bedrock were excluded)"
+      ],
+      [
+        "X9",
+        "sand_frac",
+        "sand fraction (of the soil material smaller than 2 mm, layers marked as oragnic material, water, bedrock and other were excluded)"
+      ],
+      [
+        "X10",
+        "soil_porosity",
+        "volumetric porosity"
+      ]
+    ]
+  },
+  "US_Health_CANCER": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "CANCER_AdjPrev",
+        "age-adjusted prevalence of cancer (non-skin) or melanoma among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_ARTHRITIS": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "ARTHRITIS_AdjPrev",
+        "age-adjusted prevalence of arthritis among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_BPHIGH": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "BPHIGH_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_CASTHMA": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "CASTHMA_AdjPrev",
+        "age-adjusted prevalence of current asthma among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_DEPRESSION": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "DEPRESSION_AdjPrev",
+        "age-adjusted prevalence of depression among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_DIABETES": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "DIABETES_AdjPrev",
+        "age-adjusted prevalence of diagnosed diabetes among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_OBESITY": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "OBESITY_AdjPrev",
+        "age-adjusted prevalence of obesity among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Health_STROKE": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "StateAbbr",
+        "State abbreviation"
+      ],
+      [
+        "lat",
+        "lat",
+        "Latitude"
+      ],
+      [
+        "lon",
+        "lon",
+        "Longitude"
+      ],
+      [
+        "Y",
+        "STROKE_AdjPrev",
+        "age-adjusted prevalence of stroke among adults, 2022"
+      ],
+      [
+        "X1",
+        "ACCESS2_AdjPrev",
+        "age-adjusted prevalence of lack of health insurance among adults aged 18-64 years, 2022"
+      ],
+      [
+        "X2",
+        "CHECKUP_AdjPrev",
+        "age-adjusted prevalence of routine checkup within the past year among adults, 2022"
+      ],
+      [
+        "X3",
+        "DENTAL_AdjPrev",
+        "age-adjusted prevalence of visited dentist or dental clinic in the past year among adults, 2022"
+      ],
+      [
+        "X4",
+        "BINGE_AdjPrev",
+        "age-adjusted prevalence of binge drinking among adults, 2022"
+      ],
+      [
+        "X5",
+        "CSMOKING_AdjPrev",
+        "age-adjusted prevalence of current cigarette smoking among adults, 2022"
+      ],
+      [
+        "X6",
+        "LPA_AdjPrev",
+        "age-adjusted prevalence of no leisure-time physical activity among adults, 2022"
+      ],
+      [
+        "X7",
+        "SLEEP_AdjPrev",
+        "age-adjusted prevalence of short sleep duration among adults, 2022"
+      ],
+      [
+        "X8",
+        "EMOTIONSPT_AdjPrev",
+        "age-adjusted prevalence of lack of social and emotional support among adults, 2022"
+      ]
+    ]
+  },
+  "US_Politics_Voting": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "state",
+        "US States 2-letter code"
+      ],
+      [
+        "proj_X",
+        "proj_X",
+        "X on projected coordinate system"
+      ],
+      [
+        "proj_Y",
+        "proj_Y",
+        "Y n projected coordinate system"
+      ],
+      [
+        "Y",
+        "new_pct_dem",
+        "the percentage of people who voted for the Democratic Party"
+      ],
+      [
+        "X1",
+        "sex_ratio",
+        "sex ratio"
+      ],
+      [
+        "X2",
+        "pct_black",
+        "percentage of African Americans,"
+      ],
+      [
+        "X3",
+        "pct_hisp",
+        "percentage of Hispanics"
+      ],
+      [
+        "X4",
+        "pct_bach",
+        "percentage of population with a bachelor’s degree"
+      ],
+      [
+        "X5",
+        "median_income",
+        "median household income"
+      ],
+      [
+        "X6",
+        "pct_65_over",
+        "percentage of population aged sixty-five and over"
+      ],
+      [
+        "X7",
+        "pct_age_18_29",
+        "percentage of population aged eighteen to twenty-nine"
+      ],
+      [
+        "X8",
+        "gini",
+        "Gini index"
+      ],
+      [
+        "X9",
+        "pct_manuf",
+        "percentage of population employed in the manufacturing industry"
+      ],
+      [
+        "X10",
+        "ln_pop_den",
+        "natural logarithm of population density"
+      ],
+      [
+        "X11",
+        "pct_3rd_party",
+        "percentage of third-party vote"
+      ],
+      [
+        "X12",
+        "turn_out",
+        "the voter turnout"
+      ],
+      [
+        "X13",
+        "pct_fb",
+        "percentage of foreign born"
+      ],
+      [
+        "X14",
+        "pct_uninsured",
+        "percentage of health-insured population"
+      ]
+    ]
+  },
+  "US_TRIP_Household": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name",
+      "Description"
+    ],
+    "rows": [
+      [
+        "region",
+        "CENSUS_D",
+        "Census division classification for home address",
+        "01=New England, 02=Middle Atlantic, 03=East North Central, 04=West North Central, 05=South Atlantic, 06=East South Central, 07=West South Central, 08=Mountain, 09=Pacific"
+      ],
+      [
+        "Y",
+        "VEH_PER_ADULT",
+        "Vehicles per person",
+        ""
+      ],
+      [
+        "X1",
+        "HHFAMINC_IMP",
+        "Household income (imputed)",
+        "01=Less than $10,000, 02=$10,000 to $14,999, 03=$15,000 to $24,999, 04=$25,000 to $34,999, 05=$35,000 to $49,999, 06=$50,000 to $74,999, 07=$75,000 to $99,999, 08=$100,000 to $124,999, 09=$125,000 to $149,999, 10=$150,000 to $199,999, 11=$200,000 or more"
+      ],
+      [
+        "X2",
+        "HOMEOWN",
+        "Whether home owned or rented",
+        "01=Owned by hh member with mortgage or loan, 02=Owned by hh member free and clear (no mortgage), 03=Rented by hh member, 04=Occupied without payment"
+      ],
+      [
+        "X3",
+        "LIF_CYC",
+        "Life Cycle classification for the household",
+        "01=one adult, no children, 02=2+ adults, no children, 03=one adult, youngest child 0-5, 04=2+ adults, youngest child 0-5, 05=one adult, youngest child 6-15, 06=2+ adults, youngest child 6-15, 07=one adult, youngest child 16-21, 08=2+ adults, youngest child 16-21, 09=one adult, retired, no children, 10=2+ adults, retired, no children"
+      ],
+      [
+        "X4",
+        "HH_RACE",
+        "Race of household respondent",
+        "01=White, 02=Black or African American, 03=Asian, 04=American Indian/Alaska Native, 05=Native Hawaiian/Pacific Islander, 06=Multiple races selected, 97=Other race"
+      ],
+      [
+        "X5",
+        "WRKCOUNT",
+        "Count of workers in household",
+        ""
+      ],
+      [
+        "X6",
+        "HTPPOPDN",
+        "Category of population density (persons per square mile) in the census tract of the household's home location",
+        "-9=Not ascertained, 01=0-99, 02=100-499, 03=500-999, 04=1,000-1,999, 05=2,000-3,999, 06=4,000-9,999, 07=10,000-24,999, 08=25,000-999,999"
+      ],
+      [
+        "X7",
+        "RAIL",
+        "MSA heavy rail status for household",
+        "01=Yes, 02=No"
+      ],
+      [
+        "X8",
+        "HOMETYPE",
+        "Type of home",
+        "01=One-family detached, 02=One-family attached (townhome, condo), 03=Building with 2 or more apartments, 04=Mobile home, 05=Boat, RV, van, etc."
+      ],
+      [
+        "X9",
+        "URBRUR",
+        "Household in urban/rural area",
+        "01=Urban, 02=Rural"
+      ]
+    ]
+  },
+  "US_Climate_ERA5STATE": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "state",
+        "US state name"
+      ],
+      [
+        "lat",
+        "latitude",
+        ""
+      ],
+      [
+        "lon",
+        "longitude",
+        ""
+      ],
+      [
+        "Y",
+        "t2m",
+        "2m temperature"
+      ],
+      [
+        "X1",
+        "tp",
+        "Total precipitation"
+      ],
+      [
+        "X2",
+        "sp",
+        "Surface pressure"
+      ],
+      [
+        "X3",
+        "u10",
+        "10m u-component of wind"
+      ],
+      [
+        "X4",
+        "v10",
+        "10m v-component of wind"
+      ],
+      [
+        "X5",
+        "pev",
+        "Potential evaporation"
+      ],
+      [
+        "X6",
+        "strd",
+        "Surface thermal radiation downwards"
+      ],
+      [
+        "X7",
+        "ssrd",
+        "Surface solar radiation downwards"
+      ],
+      [
+        "X8",
+        "lai_hv",
+        "Leaf area index, high vegetation"
+      ],
+      [
+        "X9",
+        "lai_lv",
+        "Leaf area index, low vegetation"
+      ]
+    ]
+  },
+  "US_Climate_ERA5CLIMATE": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "climate_region",
+        "US Climate Regions by NOAA"
+      ],
+      [
+        "lat",
+        "latitude",
+        ""
+      ],
+      [
+        "lon",
+        "longitude",
+        ""
+      ],
+      [
+        "Y",
+        "t2m",
+        "2m temperature"
+      ],
+      [
+        "X1",
+        "tp",
+        "Total precipitation"
+      ],
+      [
+        "X2",
+        "sp",
+        "Surface pressure"
+      ],
+      [
+        "X3",
+        "u10",
+        "10m u-component of wind"
+      ],
+      [
+        "X4",
+        "v10",
+        "10m v-component of wind"
+      ],
+      [
+        "X5",
+        "pev",
+        "Potential evaporation"
+      ],
+      [
+        "X6",
+        "strd",
+        "Surface thermal radiation downwards"
+      ],
+      [
+        "X7",
+        "ssrd",
+        "Surface solar radiation downwards"
+      ],
+      [
+        "X8",
+        "lai_hv",
+        "Leaf area index, high vegetation"
+      ],
+      [
+        "X9",
+        "lai_lv",
+        "Leaf area index, low vegetation"
+      ]
+    ]
+  },
+  "US_Climate_ERA5CENSUS": {
+    "columns": [
+      "Column Name",
+      "Column Name (Original)",
+      "Full Name"
+    ],
+    "rows": [
+      [
+        "region",
+        "census_division",
+        "US Census Divisions"
+      ],
+      [
+        "lat",
+        "latitude",
+        ""
+      ],
+      [
+        "lon",
+        "longitude",
+        ""
+      ],
+      [
+        "Y",
+        "t2m",
+        "2m temperature"
+      ],
+      [
+        "X1",
+        "tp",
+        "Total precipitation"
+      ],
+      [
+        "X2",
+        "sp",
+        "Surface pressure"
+      ],
+      [
+        "X3",
+        "u10",
+        "10m u-component of wind"
+      ],
+      [
+        "X4",
+        "v10",
+        "10m v-component of wind"
+      ],
+      [
+        "X5",
+        "pev",
+        "Potential evaporation"
+      ],
+      [
+        "X6",
+        "strd",
+        "Surface thermal radiation downwards"
+      ],
+      [
+        "X7",
+        "ssrd",
+        "Surface solar radiation downwards"
+      ],
+      [
+        "X8",
+        "lai_hv",
+        "Leaf area index, high vegetation"
+      ],
+      [
+        "X9",
+        "lai_lv",
+        "Leaf area index, low vegetation"
+      ]
+    ]
+  }
+}
