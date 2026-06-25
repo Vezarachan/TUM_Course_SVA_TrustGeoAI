@@ -15,6 +15,11 @@ Open a notebook in Colab and run it top to bottom. **Each notebook is self-conta
 |---|----------|-------|---------------|
 | 1 | **Case 1 — Uncertainty in Spatial Data** | Imbalanced sampling, incompleteness, and the MAUP | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_1.ipynb) |
 | 2 | **Case 2 — Uncertainty in Spatially Explicit Modeling** | Spatial inductive bias and spatial transferability | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/notebooks/TrustworthyGeoAI_case_2.ipynb) |
+| ★ | **Course Work — Spatial Uncertainty Explorer** | Your assignment: explore where a GeoAI model can be trusted, pick or build visualizations, and argue your own perspective | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Vezarachan/TUM_Course_SVA_TrustGeoAI/blob/main/live_demo/TrustGeoAI_CourseWork.ipynb) |
+
+The **Course Work** is the graded assignment — a menu-driven explorer where you pick a dataset, a
+method, and visualizations (or build your own in a few lines) to reveal a model's trustworthiness.
+See [`live_demo/README.md`](live_demo/README.md) for full instructions.
 
 **How to run a notebook in Colab**
 
@@ -46,6 +51,10 @@ TUM_Course_SVA_TrustGeoAI/
 ├── notebooks/                         # Exercise notebooks (open in Colab)
 │   ├── TrustworthyGeoAI_case_1.ipynb
 │   └── TrustworthyGeoAI_case_2.ipynb
+├── live_demo/                         # Course-work assignment (open in Colab)
+│   ├── TrustGeoAI_CourseWork.ipynb    #   menu-driven spatial-uncertainty explorer
+│   ├── README.md                      #   student instructions
+│   └── dataset/                       #   course datasets + metadata.json
 ├── geocp/                             # GeoConformal Prediction package (used in Case 2)
 ├── data/                              # Datasets (see "Datasets" below)
 ├── figures/                           # Static figures referenced from notebooks
