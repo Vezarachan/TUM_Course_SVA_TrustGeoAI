@@ -49,8 +49,13 @@ The core is the **dashboard explorer** in section ②③. Its controls let you c
 - **palette** — the color scheme · **US basemap** on/off (equal-area projection) · **point size**
 - **alpha** (target coverage) and **bandwidth** (how local the method is) — tune the trade-offs
 
+Below the dashboard there is also an **interactive map** (Plotly): **drag to pan, scroll/box to
+zoom, hover** for values, and type a **region** to focus — the easiest way to pick the visualization
+**range** you want to discuss. (Static dashboard maps use an equal-area projection so proportions
+are correct; the interactive map is fully pannable.)
+
 When you are happy, the **📤 Export your report** section turns your selection + your four write-ups
-into a standalone **`report.html`** — your unique deliverable.
+(and an optional **region** focus) into a standalone **`report.html`** — your unique deliverable.
 
 ---
 
@@ -126,7 +131,7 @@ Colab is recommended. If you prefer your own machine:
    ```bash
    git clone https://github.com/Vezarachan/TUM_Course_SVA_TrustGeoAI.git
    cd TUM_Course_SVA_TrustGeoAI/coursework
-   pip install numpy pandas matplotlib scikit-learn scipy ipywidgets jupyterlab
+   pip install numpy pandas matplotlib scikit-learn scipy ipywidgets plotly jupyterlab
    jupyter lab
    ```
 3. Open `TrustGeoAI_CourseWork.ipynb` and **Run All**. It uses the local `dataset/` folder if present,
@@ -139,6 +144,7 @@ Colab is recommended. If you prefer your own machine:
 | Problem | Fix |
 |---|---|
 | **No drop-down menus appear** | `ipywidgets` is missing/older. On Colab it is preinstalled — just **Runtime ▸ Restart and run all**. Locally: `pip install ipywidgets` and restart the kernel. The notebook still works without it (it prints how to call `explore(...)` by hand). |
+| **The interactive map does not appear** | It needs `plotly` (preinstalled on Colab). Locally: `pip install plotly` and restart the kernel. Without it, a static map is shown instead. |
 | **A download fails / no internet** | The notebook fetches data from GitHub on first use. Re-run the cell once your connection is back. |
 | **No column dictionary shown** | It is read from `dataset/metadata.json`, which downloads automatically; re-run the setup cell if a download was interrupted. |
 | **`KeyError: 'Y'`** | You used a dataset outside the provided list. Pick one from the drop-down. |
