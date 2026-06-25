@@ -40,11 +40,16 @@ Two kinds of cells:
 - 🟦 **PROVIDED** — already work; just run them, do not edit.
 - 🟨 **YOUR TURN** — you fill in (choose a dataset, build a view, or write a reflection).
 
-The core is the **explorer** in section ②③, with three drop-downs:
+The core is the **dashboard explorer** in section ②③. Its controls let you compose your own story:
 
 - **dataset** — the theme you study
 - **method** — `geocp` (prediction intervals) or `bayesian` (adds a meta-uncertainty)
-- **visualization** — switch between the ready-made methods and **compare what each one reveals**
+- **charts** (multi-select) — pick **several** visualizations to show **together** and compare
+- **palette** — the color scheme · **US basemap** on/off · **point size** · grid **columns**
+- **alpha** (target coverage) and **bandwidth** (how local the method is) — tune the trade-offs
+
+When you are happy, the **📤 Export your report** section turns your selection + your four write-ups
+into a standalone **`report.html`** — your unique deliverable.
 
 ---
 
@@ -104,8 +109,10 @@ lines; or use `matplotlib` directly for full control. After adding a view, re-ru
 
 ## What to submit
 
-The completed `TrustGeoAI_CourseWork.ipynb` with **all cells run** (plots visible) and the four 🟨
-write-up cells filled in. From Colab: *File ▸ Download ▸ Download .ipynb*.
+Both of:
+- the completed `TrustGeoAI_CourseWork.ipynb` with **all cells run** (plots visible) and the four 🟨
+  write-up cells filled in — from Colab: *File ▸ Download ▸ Download .ipynb*; and
+- your exported **`report.html`** (from the *📤 Export your report* section).
 
 ---
 
