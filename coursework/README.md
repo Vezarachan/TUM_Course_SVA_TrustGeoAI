@@ -64,9 +64,9 @@ When you are happy, the **📤 Export your report** section turns your selection
 | | Aspect | What to produce |
 |---|---|---|
 | **①** | **The scientific question** | Choose a dataset, read its column dictionary, and state a clear question where *trust matters*. |
-| **②** | **The design of user interface** | Pick the visualization method(s) that best present trust, and justify **why**. |
+| **②** | **The design of user interface** | Choose a **combination** of charts and justify **why** it lets people see the model's **risk** more clearly than one chart alone. |
 | **③** | **The way of revealing trustworthiness** | Interpret **where the model can / cannot be trusted**, pointing to a concrete region or pattern. |
-| **④** | **Retrospect the limits of AI tools** | Reflect on where the method (or an LLM you used) falls short, and what stays a **human judgment**. |
+| **④** | **Retrospect the limits of GeoAI** | Explain where/why this model is not trustworthy, then **propose how the GeoAI trust problem could be solved**. |
 
 ---
 
