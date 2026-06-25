@@ -44,8 +44,9 @@ The core is the **dashboard explorer** in section ②③. Its controls let you c
 
 - **dataset** — the theme you study
 - **method** — `geocp` (prediction intervals) or `bayesian` (adds a meta-uncertainty)
-- **charts** (multi-select) — pick **several** visualizations to show **together** and compare
-- **palette** — the color scheme · **US basemap** on/off · **point size** · grid **columns**
+- **slots 1–6** — place a chart in each slot to **position** the panels in the order you want
+  (leave a slot `(empty)` to skip); **columns** wraps them into a grid
+- **palette** — the color scheme · **US basemap** on/off (equal-area projection) · **point size**
 - **alpha** (target coverage) and **bandwidth** (how local the method is) — tune the trade-offs
 
 When you are happy, the **📤 Export your report** section turns your selection + your four write-ups
